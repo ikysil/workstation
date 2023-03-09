@@ -21,6 +21,7 @@
   with_items:
     - 20-wired.network
     - 25-wireless.network
+    - 30-tunnel.link
     - 30-tunnel.network
     - 99-defaults.network
   notify:

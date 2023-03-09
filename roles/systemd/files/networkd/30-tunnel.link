@@ -1,0 +1,8 @@
+# Tunnel links
+[Match]
+Driver=tun
+
+[Link]
+BitsPerSecond=1G
+MTUBytes=32K
+Port=mii
