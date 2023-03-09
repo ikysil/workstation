@@ -23,7 +23,7 @@
       copy:
         dest: /etc/buildinfo
         content: "{{ ansible_date_time.iso8601 }}"
-        mode: 0644
+        mode: u=rw,g=r,o=r
       become: yes
 
   vars_files:

@@ -15,7 +15,7 @@
   get_url:
     url: "https://download.docker.com/linux/ubuntu/gpg"
     dest: /etc/apt/trusted.gpg.d/docker.asc
-    mode: '0644'
+    mode: u=rw,g=r,o=r
     force: true
   become: yes
 
@@ -42,7 +42,7 @@
   file:
     path: /etc/docker
     state: directory
-    mode: 0755
+    mode: u=rwx,g=rx,o=rx
   become: yes
 
 - name: config
