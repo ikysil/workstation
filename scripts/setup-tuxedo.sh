@@ -7,7 +7,7 @@ export DEBIAN_FRONTEND=noninteractive
 # Simple prereqs
 sudo apt-get -y update
 sudo apt-get -y upgrade
-sudo apt-get -y install git ansible-core
+sudo apt-get -y install git ansible
 
 # Purge crap that gets in our way
 sudo apt-get -y autoclean
