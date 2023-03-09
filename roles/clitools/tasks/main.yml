@@ -4,11 +4,11 @@
   package:
     name: "{{ clitools_system_packages[ansible_distribution] }}"
     state: latest
-  become: true
+  become: yes
 
 # Software development tools
 - name: install software development tools
   package:
     name: "{{ clitools_development_packages[ansible_distribution] }}"
     state: latest
-  become: true
+  become: yes

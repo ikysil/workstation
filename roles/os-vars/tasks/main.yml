@@ -1,0 +1,12 @@
+---
+- name: Load a variable file based on the OS type, or a default if not found.
+  include_vars: "{{ lookup('ansible.builtin.first_found', params) }}"
+  vars:
+    params:
+      files:
+        - 'os_{{ ansible_distribution }}_{{ ansible_distribution_release }}.yml'
+        - 'os_{{ ansible_distribution }}.yml'
+        - 'os_{{ ansible_os_family }}.yml'
+        - default.yml
+      paths:
+        - 'vars'

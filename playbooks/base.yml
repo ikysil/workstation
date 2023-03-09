@@ -2,9 +2,12 @@
 - name: Base
   hosts: all
   roles:
+    - os-vars
     - nosnap
     - sysctl
     - clitools
     - systemd
+    - logrotate
+    - docker-engine
   vars_files:
     - ../vars/global.yml

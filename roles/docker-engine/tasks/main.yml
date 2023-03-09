@@ -1,0 +1,85 @@
+---
+- name: uninstall old versions
+  package:
+    name:
+      - docker
+      - docker-engine
+      - docker.io
+      - containerd
+      - runc
+    state: absent
+  become: yes
+
+
+- name: Add Docker repository key
+  get_url:
+    url: "https://download.docker.com/linux/ubuntu/gpg"
+    dest: /etc/apt/trusted.gpg.d/docker.asc
+    mode: '0644'
+    force: true
+  become: yes
+
+- name: Add Docker repository
+  apt_repository:
+    repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/docker.asc] https://download.docker.com/linux/ubuntu {{ apt_codename }} stable"
+    filename: docker
+    state: present
+  become: yes
+
+- name: Install Docker
+  package:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - docker-ce-rootless-extras
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
+    state: present
+  become: yes
+
+- name: create config directory
+  file:
+    path: /etc/docker
+    state: directory
+    mode: 0755
+  become: yes
+
+- name: config
+  copy:
+    src: daemon.json
+    dest: /etc/docker/daemon.json
+  become: yes
+  notify:
+    - restart docker
+
+- name: create docker group
+  group:
+    name: docker
+    state: present
+  become: yes
+  notify:
+    - restart docker
+
+- name: add user to group
+  user:
+    name: "{{ ansible_user_id }}"
+    append: yes
+    groups: docker
+  become: yes
+  notify:
+    - restart docker
+
+- name: logrotate
+  import_role:
+    name: logrotate
+    tasks_from: docker
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1746355
+# Haven't tested this with docker-ce
+- name: enable service
+  service:
+    name: docker
+    state: started
+    enabled: yes
+  become: yes
