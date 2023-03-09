@@ -1,0 +1,4 @@
+---
+- name: OBS Studio
+  flatpak:
+    name: com.obsproject.Studio

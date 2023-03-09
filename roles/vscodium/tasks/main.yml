@@ -1,0 +1,4 @@
+---
+- name: VSCodium
+  flatpak:
+    name: com.vscodium.codium

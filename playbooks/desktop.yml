@@ -2,8 +2,15 @@
 - name: Graphical desktop stuff
   hosts: all
   roles:
-    - nosnap
-    - sysctl
+    - bitwarden
     - clitools
+    - keepassxc
+    - nosnap
+    - obs_studio
+    - skype
+    - sysctl
+    - viber
+    - vuescan
+    - zoom
   vars_files:
     - ../vars/global.yml

@@ -11,6 +11,10 @@
         - ssh
 
   roles:
+    - gitkraken
+    - goland
+    - slack
+    - vscodium
 
   tasks:
     # Log when we last ran

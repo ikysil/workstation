@@ -1,0 +1,4 @@
+---
+- name: Bitwarden
+  flatpak:
+    name: com.bitwarden.desktop

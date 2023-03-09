@@ -1,0 +1,4 @@
+---
+- name: VueScan
+  flatpak:
+    name: com.hamrick.VueScan

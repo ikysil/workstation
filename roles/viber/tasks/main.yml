@@ -1,0 +1,4 @@
+---
+- name: Viber
+  flatpak:
+    name: com.viber.Viber

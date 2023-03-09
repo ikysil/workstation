@@ -1,0 +1,4 @@
+---
+- name: GoLand
+  flatpak:
+    name: com.jetbrains.GoLand

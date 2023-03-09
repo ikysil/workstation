@@ -1,0 +1,4 @@
+---
+- name: KeePassXC
+  flatpak:
+    name: org.keepassxc.KeePassXC
