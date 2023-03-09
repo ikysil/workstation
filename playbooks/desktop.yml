@@ -11,5 +11,6 @@
     - vuescan
     - zoom
     - virtualbox
+    - vscodium
   vars_files:
     - ../vars/global.yml

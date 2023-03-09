@@ -1,4 +1,28 @@
 ---
-- name: VSCodium
+# Flatpaks don't integrate well with host's tools and SDKs
+- name: remove flatpak
   flatpak:
     name: com.vscodium.codium
+    state: absent
+
+- name: add repository key
+  get_url:
+    url: "https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg"
+    dest: /etc/apt/trusted.gpg.d/vscodium-archive-keyring.asc
+    mode: u=rw,g=r,o=r
+    force: true
+  become: yes
+
+- name: add repository
+  apt_repository:
+    repo: "deb [ signed-by=/etc/apt/trusted.gpg.d/vscodium-archive-keyring.asc ] https://download.vscodium.com/debs vscodium main"
+    filename: vscodium
+    state: present
+  become: yes
+
+- name: install
+  package:
+    name:
+      - codium
+    state: present
+  become: yes
