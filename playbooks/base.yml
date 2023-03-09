@@ -10,5 +10,6 @@
     - systemd
     - logrotate
     - docker-engine
+    - openvpn3
   vars_files:
     - ../vars/global.yml

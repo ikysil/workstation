@@ -1,0 +1,23 @@
+---
+- name: add repository key
+  get_url:
+    url: "https://swupdate.openvpn.net/repos/openvpn-repo-pkg-key.pub"
+    dest: /etc/apt/trusted.gpg.d/openvpn-repo-pkg-key.asc
+    mode: u=rw,g=r,o=r
+    force: true
+  become: yes
+
+- name: add repository
+  get_url:
+    url: "https://swupdate.openvpn.net/community/openvpn3/repos/openvpn3-{{ apt_codename }}.list"
+    dest: /etc/apt/sources.list.d/openvpn3.list
+    mode: u=rw,g=r,o=r
+    force: true
+  become: yes
+
+- name: install
+  package:
+    name:
+      - openvpn3
+    state: present
+  become: yes
