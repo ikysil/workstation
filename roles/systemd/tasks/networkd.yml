@@ -1,0 +1,28 @@
+---
+- name: enable systemd-networkd
+  service:
+    name: systemd-networkd
+    state: started
+    enabled: true
+  become: yes
+
+- name: ensure network
+  file:
+    path: "/etc/systemd/network"
+    state: directory
+    mode: u=rwx,g=rx,o=rx
+  become: yes
+
+- name: configure systemd-networkd
+  copy:
+    src: "networkd/{{ item }}"
+    dest: "/etc/systemd/network/{{ item }}"
+  become: yes
+  with_items:
+    - 20-wired.network
+    - 25-wireless.network
+    - 30-tunnel.network
+    - 99-defaults.network
+  notify:
+    - restart networkd
+    - restart resolved

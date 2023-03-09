@@ -12,3 +12,10 @@
     state: restarted
   become: yes
   listen: restart journald
+
+- name: restart networkd
+  service:
+    name: systemd-networkd
+    state: restarted
+  become: yes
+  listen: restart networkd

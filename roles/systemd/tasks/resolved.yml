@@ -15,7 +15,7 @@
 
 - name: configure systemd-resolved
   copy:
-    src: "{{ item }}"
+    src: "resolved/{{ item }}"
     dest: "/etc/systemd/resolved.conf.d/{{ item }}"
   become: yes
   with_items:

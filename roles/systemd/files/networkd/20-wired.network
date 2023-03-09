@@ -1,0 +1,12 @@
+# Wired networks
+[Match]
+Name=en*
+
+[Network]
+MulticastDNS=resolve
+LLMNR=resolve
+DHCP=yes
+DNSDefaultRoute=true
+
+[DHCP]
+RouteMetric=10

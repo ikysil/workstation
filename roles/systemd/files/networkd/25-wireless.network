@@ -1,0 +1,13 @@
+# Wireless networks
+[Match]
+Name=wl*
+
+[Network]
+MulticastDNS=resolve
+LLMNR=resolve
+DHCP=yes
+DNSDefaultRoute=true
+IgnoreCarrierLoss=5s
+
+[DHCP]
+RouteMetric=20

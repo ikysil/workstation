@@ -1,0 +1,9 @@
+# Tunnel networks
+[Match]
+Name=DO_NO_MATCH_tun*
+
+[Network]
+MulticastDNS=resolve
+LLMNR=resolve
+# Resolve only those names explicitly matching Domains=
+DNSDefaultRoute=true

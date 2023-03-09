@@ -1,0 +1,7 @@
+# Defaults for all networks
+[Match]
+Name=!tun*
+
+[Network]
+MulticastDNS=resolve
+LLMNR=resolve
