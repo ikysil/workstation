@@ -5,9 +5,10 @@ clitools_system_packages:
     - exa
     - fzf
     - gnupg2
+    - haveged
     - htop
     - openssl
-    - p7zip
+    - p7zip-full
     - rclone
     - ripgrep
     - sshpass
