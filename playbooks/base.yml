@@ -1,0 +1,10 @@
+---
+- name: Base
+  hosts: all
+  roles:
+    - nosnap
+    - sysctl
+    - clitools
+    - systemd
+  vars_files:
+    - ../vars/global.yml

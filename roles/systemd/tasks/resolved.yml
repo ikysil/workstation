@@ -1,0 +1,24 @@
+---
+- name: enable systemd-resolved
+  service:
+    name: systemd-resolved
+    state: started
+    enabled: true
+  become: yes
+
+- name: ensure resolved.conf.d
+  file:
+    path: "/etc/systemd/resolved.conf.d"
+    state: directory
+    mode: u=rwx,g=rx,o=rx
+  become: yes
+
+- name: configure systemd-resolved
+  copy:
+    src: "{{ item }}"
+    dest: "/etc/systemd/resolved.conf.d/{{ item }}"
+  become: yes
+  with_items:
+    - 90-docker-listener.conf
+    - 90-mdns.conf
+  notify: restart resolved

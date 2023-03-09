@@ -3,12 +3,9 @@
   hosts: all
   roles:
     - bitwarden
-    - clitools
     - keepassxc
-    - nosnap
     - obs_studio
     - skype
-    - sysctl
     - viber
     - vuescan
     - zoom

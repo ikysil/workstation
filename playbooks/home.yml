@@ -1,6 +1,7 @@
 ---
 # A home computer
 #
+- import_playbook: base.yml
 - import_playbook: desktop.yml
 
 - name: Home
