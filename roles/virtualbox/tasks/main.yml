@@ -1,0 +1,21 @@
+- name: add repository key
+  get_url:
+    url: "https://www.virtualbox.org/download/oracle_vbox_2016.asc"
+    dest: /etc/apt/trusted.gpg.d/oracle_vbox_2016.asc
+    mode: u=rw,g=r,o=r
+    force: true
+  become: yes
+
+- name: add repository
+  apt_repository:
+    repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/oracle_vbox_2016.asc] https://download.virtualbox.org/virtualbox/debian {{ apt_codename }} contrib"
+    filename: virtualbox
+    state: present
+  become: yes
+
+- name: install
+  package:
+    name:
+      - virtualbox-7.0
+    state: present
+  become: yes

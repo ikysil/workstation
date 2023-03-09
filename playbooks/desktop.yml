@@ -2,6 +2,7 @@
 - name: Graphical desktop stuff
   hosts: all
   roles:
+    - os-vars
     - bitwarden
     - keepassxc
     - obs_studio
@@ -9,5 +10,6 @@
     - viber
     - vuescan
     - zoom
+    - virtualbox
   vars_files:
     - ../vars/global.yml
