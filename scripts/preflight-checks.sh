@@ -2,17 +2,6 @@
 
 source /lib/lsb/init-functions
 
-check_ssh() {
-    systemctl status sshd >/dev/null
-    rc=$?
-    if [ ${rc} != 0 ]; then
-        log_failure_msg "SSHD is not running."
-        return 1
-    else
-        log_success_msg "SSHD is running."
-    fi
-}
-
 check_sudoers() {
     sudo cat /etc/sudoers | grep -i requiretty >/dev/null
     rc=$?
