@@ -1,4 +1,5 @@
 ---
+
 - name: Load a variable file based on the OS type, or a default if not found.
   include_vars: "{{ lookup('ansible.builtin.first_found', params) }}"
   vars:
@@ -10,3 +11,18 @@
         - default.yml
       paths:
         - 'vars'
+
+- name: dpkg arch
+  shell: dpkg --print-architecture
+  register: dpkg_architecture
+
+- name: set deb_arch
+  set_fact:
+    deb_arch: '{{ dpkg_architecture.stdout }}'
+
+- name: show custom variables
+  debug:
+    var: '{{ item }}'
+  loop:
+    - deb_arch
+    - apt_codename

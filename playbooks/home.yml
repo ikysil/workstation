@@ -12,6 +12,7 @@
         - ssh
 
   roles:
+    - github-cli
     - gitkraken
     - goland
     - slack

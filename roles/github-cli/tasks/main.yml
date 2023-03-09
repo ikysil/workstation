@@ -1,0 +1,22 @@
+---
+- name: add repository key
+  get_url:
+    url: "https://cli.github.com/packages/githubcli-archive-keyring.gpg"
+    dest: /etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg
+    mode: u=rw,g=r,o=r
+    force: true
+  become: yes
+
+- name: add repository
+  apt_repository:
+    repo: "deb [arch={{ deb_arch }} signed-by=/etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main"
+    filename: github-cli
+    state: present
+  become: yes
+
+- name: install
+  package:
+    name:
+      - gh
+    state: present
+  become: yes
