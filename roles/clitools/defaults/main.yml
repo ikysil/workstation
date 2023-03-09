@@ -1,5 +1,6 @@
 clitools_system_packages:
   Ubuntu:
+    - autorandr
     - btop
     - exa
     - fzf
@@ -7,6 +8,7 @@ clitools_system_packages:
     - htop
     - openssl
     - p7zip
+    - rclone
     - ripgrep
     - sshpass
     - unzip
@@ -17,3 +19,7 @@ clitools_development_packages:
     - git
     - git-extras
     - jq
+    - lnav
+    - podman
+    - tig
+    - tmuxp
