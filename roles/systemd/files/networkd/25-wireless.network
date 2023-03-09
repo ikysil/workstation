@@ -7,7 +7,7 @@ MulticastDNS=resolve
 LLMNR=resolve
 DHCP=yes
 DNSDefaultRoute=true
-IgnoreCarrierLoss=5s
+IgnoreCarrierLoss=true
 
 [DHCP]
 RouteMetric=20
