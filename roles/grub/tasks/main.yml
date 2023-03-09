@@ -1,0 +1,9 @@
+---
+- name: configure grub
+  copy:
+    src: "{{ item }}"
+    dest: "/etc/default/grub.d/{{ item }}"
+  become: yes
+  with_items:
+    - 90-workstation.cfg
+  notify: update grub

@@ -3,6 +3,7 @@
   hosts: all
   roles:
     - os-vars
+    - grub
     - nosnap
     - sysctl
     - clitools
