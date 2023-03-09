@@ -1,0 +1,7 @@
+---
+- name: install nosnap preference
+  copy:
+    src:  nosnap.pref
+    dest: /etc/apt/preferences.d/nosnap.pref
+    mode: 0644
+  become: yes

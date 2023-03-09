@@ -1,0 +1,26 @@
+---
+# A home computer
+#
+- import_playbook: desktop.yml
+
+- name: Home
+  hosts: all
+  vars:
+    - firewalld_zone: home
+    - firewalld_enabled_services:
+        - ssh
+
+  roles:
+
+  tasks:
+    # Log when we last ran
+    - name: log run date to file
+      copy:
+        dest: /etc/buildinfo
+        content: "{{ ansible_date_time.iso8601 }}"
+        mode: 0644
+      become: yes
+
+  vars_files:
+    - ../vars/global.yml
+    - ../vars/home.yml
