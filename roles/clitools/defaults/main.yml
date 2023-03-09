@@ -1,0 +1,19 @@
+clitools_system_packages:
+  Ubuntu:
+    - btop
+    - exa
+    - fzf
+    - gnupg2
+    - htop
+    - openssl
+    - p7zip
+    - ripgrep
+    - sshpass
+    - unzip
+
+clitools_development_packages:
+  Ubuntu:
+    - ansible-lint
+    - git
+    - git-extras
+    - jq

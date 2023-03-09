@@ -4,5 +4,6 @@
   roles:
     - nosnap
     - sysctl
+    - clitools
   vars_files:
     - ../vars/global.yml
