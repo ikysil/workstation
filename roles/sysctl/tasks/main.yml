@@ -1,0 +1,10 @@
+---
+- name: configure sysctl
+  copy:
+    src: "{{ item }}"
+    dest: "/etc/sysctl.d/{{ item }}"
+  become: yes
+  with_items:
+    - 90-aio.conf
+    - 90-filewatch.conf
+  notify: reload sysctl

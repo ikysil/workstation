@@ -3,5 +3,6 @@
   hosts: all
   roles:
     - nosnap
+    - sysctl
   vars_files:
     - ../vars/global.yml
