@@ -1,6 +1,9 @@
 # Defaults for all networks
 [Match]
 Name=!tun*
+Name=!veth*
+Name=!docker*
+Name=!br*
 
 [Network]
 MulticastDNS=resolve
