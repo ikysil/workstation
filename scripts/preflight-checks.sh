@@ -24,7 +24,7 @@ check_updates() {
 }
 
 check_efi() {
-    sudo grub-probe -t device /boot/EFI >/dev/null 2>&1
+    sudo grub-probe -t device /boot/efi >/dev/null 2>&1
     rc=$?
     if [ ${rc} != 0 ]; then
         log_failure_msg "EFI bootloader not found."
