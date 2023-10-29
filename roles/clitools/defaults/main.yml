@@ -7,6 +7,7 @@ clitools_system_packages:
     - gnupg2
     - haveged
     - htop
+    - openssh-server
     - openssl
     - p7zip-full
     - rclone
