@@ -8,6 +8,7 @@
     - sysctl
     - clitools
     - systemd
+    - ufw
     - logrotate
     - docker-engine
     - openvpn3
