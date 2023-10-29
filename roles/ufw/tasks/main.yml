@@ -20,6 +20,18 @@
   community.general.ufw:
     rule: deny
     port: '53'
+    insert: 0
+    insert_relative_to: "last-ipv4"
+  become: yes
+
+- name: Allow access to resolvd extra listener
+  community.general.ufw:
+    rule: allow
+    dest: '{{ resolvd_docker_listener }}'
+    port: '53'
+    proto: any
+    insert: 0
+    insert_relative_to: "first-ipv4"
   become: yes
 
 # ufw supports connection rate limiting, which is useful for protecting

@@ -2,3 +2,5 @@
 
 # System display
 display: ":0.0"
+
+resolvd_docker_listener: 172.17.0.1
