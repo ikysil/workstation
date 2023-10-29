@@ -35,8 +35,8 @@
   become: yes
 
 # Allow OpenSSH.
-- name: Allow OpenSSH
-  community.general.ufw:
-    rule: allow
-    name: OpenSSH
-  become: yes
+# - name: Allow OpenSSH
+#  community.general.ufw:
+#    rule: allow
+#    name: OpenSSH
+#  become: yes
