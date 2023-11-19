@@ -3,6 +3,14 @@
     name: linuxbrew
   become: yes
 
+- name: Ensure "{{ ansible_user_id }}" has access to linuxbrew group
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    groups:
+      - linuxbrew
+    append: yes
+  become: yes
+
 - name: User for Illya Kysil
   ansible.builtin.user:
     name: ikysil
