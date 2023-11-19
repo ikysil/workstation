@@ -4,5 +4,7 @@
     path: "{{ linuxbrew_prefix_shared }}"
     owner: root
     group: linuxbrew
+    # supposed to set directories to 775 and files to 664
+    mode: u=rwX,g=rwX,o=rX
     recurse: true
   become: yes
