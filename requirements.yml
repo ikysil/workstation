@@ -1,0 +1,5 @@
+---
+roles:
+  - name: linuxbrew
+    src: https://github.com/markosamuli/ansible-linuxbrew.git
+    version: v2.0.2
