@@ -1,0 +1,8 @@
+---
+- name: Change permissions on {{ linuxbrew_prefix_shared }}
+  file:
+    path: "{{ linuxbrew_prefix_shared }}"
+    owner: root
+    group: linuxbrew
+    recurse: true
+  become: yes

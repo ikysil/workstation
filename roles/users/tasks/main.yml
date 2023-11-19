@@ -1,3 +1,8 @@
+- name: Group for shared linuxbrew
+  ansible.builtin.group:
+    name: linuxbrew
+  become: yes
+
 - name: User for Illya Kysil
   ansible.builtin.user:
     name: ikysil

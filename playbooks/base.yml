@@ -14,5 +14,6 @@
     - docker-engine
     - openvpn3
     - users
+    - fs-permissions
   vars_files:
     - ../vars/global.yml
