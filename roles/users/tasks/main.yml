@@ -6,7 +6,7 @@
       - adm
       - docker
       - linuxbrew
-      - rust-cargo
+      # - rust-cargo
       - scanner
       - sudo
       - systemd-journal
