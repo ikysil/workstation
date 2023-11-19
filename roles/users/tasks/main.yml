@@ -1,0 +1,15 @@
+- name: User for Illya Kysil
+  ansible.builtin.user:
+    name: ikysil
+    shell: /bin/bash
+    groups:
+      - adm
+      - docker
+      - linuxbrew
+      - rust-cargo
+      - scanner
+      - sudo
+      - systemd-journal
+      - vboxusers
+    append: yes
+  become: yes

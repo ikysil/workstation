@@ -12,5 +12,6 @@
     - logrotate
     - docker-engine
     - openvpn3
+    - users
   vars_files:
     - ../vars/global.yml
