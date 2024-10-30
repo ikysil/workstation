@@ -9,7 +9,8 @@
 
 - name: add repository
   get_url:
-    url: "https://swupdate.openvpn.net/community/openvpn3/repos/openvpn3-{{ apt_codename }}.list"
+    #url: "https://swupdate.openvpn.net/community/openvpn3/repos/openvpn3-{{ apt_codename }}.list"
+    url: "https://swupdate.openvpn.net/community/openvpn3/repos/openvpn3-jammy.list"
     dest: /etc/apt/sources.list.d/openvpn3.list
     mode: u=rw,g=r,o=r
     force: true
