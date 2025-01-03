@@ -14,7 +14,7 @@
   become: yes
 
 - name: configure systemd-resolved
-  copy:
+  ansible.builtin.template:
     src: "resolved/{{ item }}"
     dest: "/etc/systemd/resolved.conf.d/{{ item }}"
   become: yes
