@@ -1,6 +1,7 @@
 # Wired networks
 [Match]
 Name=en*
+Name=eth*
 
 [Network]
 MulticastDNS=resolve
