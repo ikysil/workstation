@@ -17,6 +17,14 @@
 - name: install
   package:
     name:
-      - virtualbox-7.0
+      - virtualbox
     state: present
+  become: yes
+
+- name: Append groups for Illya Kysil
+  ansible.builtin.user:
+    name: ikysil
+    groups:
+      - vboxusers
+    append: yes
   become: yes

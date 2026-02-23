@@ -19,10 +19,8 @@
       - adm
       - docker
       - linuxbrew
-      # - rust-cargo
       - scanner
       - sudo
       - systemd-journal
-      - vboxusers
     append: yes
   become: yes
